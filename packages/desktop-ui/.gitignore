@@ -1,0 +1,62 @@
+# Node modules
+/node_modules/
+
+# Logs
+*.log
+
+# Dependency directories
+/coverage/
+/dist/
+/build/
+
+/*.env
+*.env.local
+*.env.*.local
+
+# React Native
+.expo/
+
+# Vscode and IDE settings
+.vscode/
+/.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Electron related
+/.electron/
+electron-build/
+/out/
+# If you're using electron-forge
+/.webpack/
+
+# Package-lock or Yarn lock files (optional, can be tracked if you want)
+package-lock.json
+yarn.lock
+
+# Build output (depends on your build system)
+*.asar
+*.dmg
+*.exe
+*.app
+*.tar.gz
+*.deb
+
+# System-specific files
+*.swp
+*.swo
+
+# Optional: test coverage output
+coverage/
+
+# npm or yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Jest config folder
+/jest/
+
+# Test output
+/coverage/

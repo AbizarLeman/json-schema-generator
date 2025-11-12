@@ -1,17 +1,12 @@
 {
-  "name": "@json-schema-generator-monorepo/cli",
-  "version": "1.0.0",
-  "main": "json-schema-generator.js",
+  "name": "json-schema-generator-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:desktop": "npm run start --workspace=@json-schema-generator-monorepo/desktop-ui"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "json-pointer": "^0.6.2"
-  },
-  "type": "module"
+  }
 }
