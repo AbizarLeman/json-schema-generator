@@ -1,5 +1,7 @@
 {
   "name": "json-schema-generator-monorepo",
+  "version": "1.0.0",
+  "description": "A monorepo for JSON schema file generator application and related packages.",
   "private": true,
   "workspaces": [
     "packages/*"

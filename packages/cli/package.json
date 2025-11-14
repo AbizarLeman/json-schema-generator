@@ -1,6 +1,7 @@
 {
   "name": "@json-schema-generator-monorepo/cli",
   "version": "1.0.0",
+  "description": "A CLI for generating JSON schema files.",
   "main": "json-schema-generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,7 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "js-yaml": "^4.1.0",
     "json-pointer": "^0.6.2"

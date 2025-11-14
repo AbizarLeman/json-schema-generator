@@ -2,7 +2,7 @@
   "name": "@json-schema-generator-monorepo/desktop-ui",
   "private": true,
   "version": "1.0.0",
-  "description": "A JSON schema file generator application.",
+  "description": "A desktop UI JSON schema file generator.",
   "main": "./out/main/index.js",
   "author": "AbizarLeman",
   "homepage": "https://github.com/AbizarLeman",
