@@ -1,5 +1,6 @@
 {
   "name": "@json-schema-generator-monorepo/desktop-ui",
+  "private": true,
   "version": "1.0.0",
   "description": "A JSON schema file generator application.",
   "main": "./out/main/index.js",
@@ -14,7 +15,6 @@
     "start": "electron-vite preview",
     "dev": "electron-vite dev",
     "build": "npm run typecheck && electron-vite build",
-    "postinstall": "electron-builder install-app-deps",
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
     "build:mac": "electron-vite build && electron-builder --mac",
@@ -44,7 +44,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.7.0",
-    "electron": "^37.2.3",
+    "electron": "37.9.0",
     "electron-builder": "^25.1.8",
     "electron-vite": "^4.0.0",
     "eslint": "^9.31.0",
