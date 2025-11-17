@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "description": "Core utilities and functions for JSON schema generation.",
+  "main": "index.js",
+  "type": "module",
   "author": "AbizarLeman",
   "homepage": "https://github.com/AbizarLeman",
   "dependencies": {
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "json-pointer": "^0.6.2",
     "openapi-schema-validator": "^12.1.3",
     "openapi-types": "^12.1.3"

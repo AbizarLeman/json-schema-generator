@@ -3,17 +3,17 @@ import { app, shell, BrowserWindow, ipcMain } from "electron";
 import { join } from "path";
 import { electronApp, optimizer, is } from "@electron-toolkit/utils";
 import icon from "../../resources/icon.png?asset";
-import { GenerateSchemaFileCommand } from "./types";
 import {
   generateSchemaFile,
   getSchemasByFilePath,
   validateOpenAPISpecification,
-} from "./services/open-api-services";
+} from "@json-schema-generator-monorepo/core/services/open-api-services";
 import {
   browseDirectoryDialog,
   browseFileDialog,
   openFileExplorer,
-} from "./services/directory-services";
+} from "@json-schema-generator-monorepo/core/services/directory-services";
+import { GenerateSchemaFileCommand } from "@json-schema-generator-monorepo/core/types";
 
 app.commandLine.appendSwitch("no-sandbox");
 app.commandLine.appendSwitch("disable-gpu-sandbox");
