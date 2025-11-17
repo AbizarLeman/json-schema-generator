@@ -4,8 +4,21 @@ import { join } from "path";
 import { electronApp, optimizer, is } from "@electron-toolkit/utils";
 import icon from "../../resources/icon.png?asset";
 import { GenerateSchemaFileCommand } from "./types";
-import { generateSchemaFile, getSchemasByFilePath, validateOpenAPISpecification } from "./services/open-api-services";
-import { browseDirectoryDialog, browseFileDialog, openFileExplorer } from "./services/directory-services";
+import {
+  generateSchemaFile,
+  getSchemasByFilePath,
+  validateOpenAPISpecification,
+} from "./services/open-api-services";
+import {
+  browseDirectoryDialog,
+  browseFileDialog,
+  openFileExplorer,
+} from "./services/directory-services";
+
+app.commandLine.appendSwitch("no-sandbox");
+app.commandLine.appendSwitch("disable-gpu-sandbox");
+app.commandLine.appendSwitch("disable-features", "UseLinuxVSocket");
+app.commandLine.appendSwitch("disable-gpu");
 
 const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
@@ -16,7 +29,7 @@ const createWindow = (): void => {
     ...(process.platform === "linux" ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, "../preload/index.js"),
-      sandbox: false
+      sandbox: false,
     },
     icon: join(__dirname, "../../resources/icons/win/icon.ico"),
   });
@@ -28,7 +41,7 @@ const createWindow = (): void => {
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url);
     return { action: "deny" };
-  })
+  });
 
   if (is.dev && process.env["ELECTRON_RENDERER_URL"]) {
     mainWindow.loadURL(process.env["ELECTRON_RENDERER_URL"]);
@@ -44,12 +57,29 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window);
   });
 
-  ipcMain.handle("validate-open-api-specification", async (_event, argument: string) => await validateOpenAPISpecification(argument));
-  ipcMain.handle("get-schemas-by-file-path", async (_event, argument: string) => await getSchemasByFilePath(argument));
+  ipcMain.handle(
+    "validate-open-api-specification",
+    async (_event, argument: string) =>
+      await validateOpenAPISpecification(argument),
+  );
+  ipcMain.handle(
+    "get-schemas-by-file-path",
+    async (_event, argument: string) => await getSchemasByFilePath(argument),
+  );
   ipcMain.handle("browse-file-dialog", async () => await browseFileDialog());
-  ipcMain.handle("browse-directory-dialog", async () => await browseDirectoryDialog());
-  ipcMain.handle("open-file-explorer", async (_event, argument: string) => await openFileExplorer(argument));
-  ipcMain.handle("generate-schema-file", async (_event, argument: GenerateSchemaFileCommand) => await generateSchemaFile(argument));
+  ipcMain.handle(
+    "browse-directory-dialog",
+    async () => await browseDirectoryDialog(),
+  );
+  ipcMain.handle(
+    "open-file-explorer",
+    async (_event, argument: string) => await openFileExplorer(argument),
+  );
+  ipcMain.handle(
+    "generate-schema-file",
+    async (_event, argument: GenerateSchemaFileCommand) =>
+      await generateSchemaFile(argument),
+  );
 
   createWindow();
 
