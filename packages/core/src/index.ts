@@ -1,1 +1,1 @@
-export * from "./services/open-api-services.ts";
+export * from "./services/open-api-services";

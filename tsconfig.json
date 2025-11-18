@@ -13,7 +13,5 @@
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
-  },
-  "allowImportingTsExtensions": true,
-  "noEmit": true
+  }
 }

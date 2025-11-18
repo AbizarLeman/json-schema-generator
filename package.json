@@ -7,7 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start:desktop-ui": "npm run start --workspace=@json-schema-generator-monorepo/desktop-ui",
+    "preview:desktop-ui": "npm run start --workspace=@json-schema-generator-monorepo/desktop-ui",
+    "build:cli": "npm run build --workspace=@json-schema-generator-monorepo/cli",
     "start:cli": "npm run start --workspace=@json-schema-generator-monorepo/cli"
   },
   "devDependencies": {

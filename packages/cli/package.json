@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "A CLI for generating JSON schema files.",
   "main": "json-schema-generator.js",
+  "bin": {
+    "json-schema-generator": "./dist/index.js"
+  },
   "scripts": {
-    "start": "ts-node-esm --experimental-specifier-resolution=node -r tsconfig-paths/register json-schema-generator.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/app.cjs",
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/app.cjs",
+    "start:dev": "nodemon --exec ts-node-esm src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +19,10 @@
   },
   "type": "module",
   "devDependencies": {
+    "esbuild": "^0.27.0",
+    "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3"
   }
 }
