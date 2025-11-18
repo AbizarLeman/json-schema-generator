@@ -6,12 +6,10 @@ import icon from "../../resources/icon.png?asset";
 import {
   generateSchemaFile,
   getSchemasByFilePath,
-  validateOpenAPISpecification,
-  browseDirectoryDialog,
-  browseFileDialog,
-  openFileExplorer
+  validateOpenAPISpecification
 } from "@json-schema-generator-monorepo/core";
-import { GenerateSchemaFileCommand } from "@json-schema-generator-monorepo/core/types";
+import { browseDirectoryDialog, browseFileDialog, openFileExplorer } from "./services/directory-services";
+import { GenerateSchemaFileCommand } from "@json-schema-generator-monorepo/core/src/types";
 
 app.commandLine.appendSwitch("no-sandbox");
 app.commandLine.appendSwitch("disable-gpu-sandbox");

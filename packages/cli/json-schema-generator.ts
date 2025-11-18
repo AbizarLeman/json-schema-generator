@@ -1,6 +1,6 @@
+import { generateSchemaFile } from "@json-schema-generator-monorepo/core";
 import { mkdir, access } from "fs/promises";
 import { createInterface } from "node:readline/promises";
-import { generateSchemaFile } from "@json-schema-generator-monorepo/core";
 
 const main = async () => {
     const readline = createInterface({

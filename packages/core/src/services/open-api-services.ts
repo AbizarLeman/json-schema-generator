@@ -4,10 +4,9 @@ import fs from "fs/promises";
 import { load } from "js-yaml";
 import pointer from "json-pointer";
 import type { OpenAPIV3 } from "openapi-types";
-import { GenerateSchemaFileCommand } from "../../types";
+import type { GenerateSchemaFileCommand } from "../types.ts"; // ✅ Your fix (Keep this!)
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const OpenAPISchemaValidator = require("openapi-schema-validator").default;
+import OpenAPISchemaValidator from "openapi-schema-validator";
 
 const validateOpenAPISpecification = async (
   filePath: string,
@@ -17,8 +16,8 @@ const validateOpenAPISpecification = async (
     const openAPISpecification = (await load(
       fileContent,
     )) as OpenAPIV3.Document;
-
-    const validator = new OpenAPISchemaValidator({ version: 3 });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const validator = new (OpenAPISchemaValidator as any).default({ version: 3 });
     const result = validator.validate(openAPISpecification);
 
     if (result.errors.length > 0) return false;
