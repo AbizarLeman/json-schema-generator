@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@json-schema-generator-monorepo/core/*": ["packages/core/src/*"]
+      "@json-schema-generator-monorepo/core/src/*": ["packages/core/src/*"]
     }
   }
 }

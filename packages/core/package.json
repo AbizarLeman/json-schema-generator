@@ -5,9 +5,9 @@
   "type": "module",
   "author": "AbizarLeman",
   "homepage": "https://github.com/AbizarLeman",
-  "main": "./index.ts",
+  "main": "./src/index.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts"
   },
   "dependencies": {
     "js-yaml": "^4.1.1",
