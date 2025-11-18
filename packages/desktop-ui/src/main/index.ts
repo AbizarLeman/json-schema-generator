@@ -7,12 +7,10 @@ import {
   generateSchemaFile,
   getSchemasByFilePath,
   validateOpenAPISpecification,
-} from "@json-schema-generator-monorepo/core/services/open-api-services";
-import {
   browseDirectoryDialog,
   browseFileDialog,
-  openFileExplorer,
-} from "@json-schema-generator-monorepo/core/services/directory-services";
+  openFileExplorer
+} from "@json-schema-generator-monorepo/core";
 import { GenerateSchemaFileCommand } from "@json-schema-generator-monorepo/core/types";
 
 app.commandLine.appendSwitch("no-sandbox");

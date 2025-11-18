@@ -4,14 +4,18 @@
   "description": "A CLI for generating JSON schema files.",
   "main": "json-schema-generator.js",
   "scripts": {
+    "start": "ts-node-esm -r tsconfig-paths/register json-schema-generator.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "json-pointer": "^0.6.2"
+    "@json-schema-generator-monorepo/core": "*"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
 }

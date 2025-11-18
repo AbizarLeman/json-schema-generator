@@ -7,8 +7,12 @@
     "packages/*"
   ],
   "scripts": {
-    "start:desktop-ui": "npm run start --workspace=@json-schema-generator-monorepo/desktop-ui"
+    "start:desktop-ui": "npm run start --workspace=@json-schema-generator-monorepo/desktop-ui",
+    "start:cli": "npm run start --workspace=@json-schema-generator-monorepo/cli"
   },
-  "dependencies": {
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
   }
 }

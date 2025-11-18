@@ -4,7 +4,7 @@ import fs from "fs/promises";
 import { load } from "js-yaml";
 import pointer from "json-pointer";
 import type { OpenAPIV3 } from "openapi-types";
-import { GenerateSchemaFileCommand } from "../types";
+import { GenerateSchemaFileCommand } from "../../types";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const OpenAPISchemaValidator = require("openapi-schema-validator").default;

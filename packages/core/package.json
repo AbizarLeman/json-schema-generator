@@ -1,12 +1,14 @@
 {
   "name": "@json-schema-generator-monorepo/core",
-  "private": true,
   "version": "1.0.0",
   "description": "Core utilities and functions for JSON schema generation.",
-  "main": "index.js",
   "type": "module",
   "author": "AbizarLeman",
   "homepage": "https://github.com/AbizarLeman",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
   "dependencies": {
     "js-yaml": "^4.1.1",
     "json-pointer": "^0.6.2",

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@json-schema-generator-monorepo/core": ["packages/core/src/index.ts"]
+    }
+  }
+}
