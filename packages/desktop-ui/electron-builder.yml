@@ -13,10 +13,13 @@ asarUnpack:
   - resources/**
 win:
   executableName: json-schema-generator-client
+  target:
+    - nsis
+  artifactName: "json-schema-generator-client-${version}-setup.exe"
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
-  shortcutName: ${productName}
-  uninstallDisplayName: ${productName}
+  artifactName: "json-schema-generator-client-${version}-setup.exe"
+  shortcutName: json-schema-generator-client
+  uninstallDisplayName: json-schema-generator-client
   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist

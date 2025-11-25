@@ -7,26 +7,38 @@ export default defineConfig({
   main: {
     plugins: [
       externalizeDepsPlugin({
-        exclude: ["@json-schema-generator-monorepo/core"]
+        exclude: ["@json-schema-generator-monorepo/core"],
       }),
-      tsconfigPaths()
-    ]
-  },
-  preload: {
-    plugins: [
-      externalizeDepsPlugin(),
-      tsconfigPaths()
-    ]
-  },
-  renderer: {
-    plugins: [
-      react(),
-      tsconfigPaths()
+      tsconfigPaths(),
     ],
     resolve: {
       alias: {
-        "@renderer": resolve("src/renderer/src")
-      }
-    }
-  }
+        "@core": resolve(__dirname, "../core/src"),
+      },
+    },
+    build: {
+      rollupOptions: {
+        external: [],
+      },
+    },
+  },
+
+  preload: {
+    plugins: [externalizeDepsPlugin(), tsconfigPaths()],
+    resolve: {
+      alias: {
+        "@core": resolve(__dirname, "../core/src"),
+      },
+    },
+  },
+
+  renderer: {
+    plugins: [react(), tsconfigPaths()],
+    resolve: {
+      alias: {
+        "@renderer": resolve("src/renderer/src"),
+        "@core": resolve(__dirname, "../core/src"),
+      },
+    },
+  },
 });

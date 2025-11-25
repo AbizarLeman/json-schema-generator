@@ -26,12 +26,12 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fontsource/roboto": "^5.2.6",
-    "@json-schema-generator-monorepo/core": "*",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "electron-updater": "^6.3.9"
   },
   "devDependencies": {
+    "@json-schema-generator-monorepo/core": "*",
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "@electron-toolkit/eslint-config-ts": "^3.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
