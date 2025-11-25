@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 import { electronAPI } from "@electron-toolkit/preload";
-import { GenerateSchemaFileCommand } from "../main/types";
+import { GenerateSchemaFileCommand } from "@json-schema-generator-monorepo/core/src/types";
 
 // Custom APIs for renderer
 const api = {
