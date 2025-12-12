@@ -10,8 +10,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  FormControlLabel,
+  FormGroup,
   Grid,
   Snackbar,
+  Switch,
   TextField,
   type AlertColor
 } from "@mui/material";
@@ -28,6 +31,8 @@ const App = (): JSX.Element => {
   const [schemas, setSchemas] = useState<string[]>([]);
   const [schemaValues, setSchemaValues] = useState<string[]>([]);
   const [searchTextValue, setSearchTextValue] = useState("");
+
+  const [isGeneratingSwaggerFiles, setIsGeneratingSwaggerFiles] = useState<boolean>(false);
 
   const [isSpecificationValid, setIsSpecificationValid] = useState<boolean>(true);
   const [isConfirmationDialogOpen, setIsConfirmationDialogOpen] = useState<boolean>(false);
@@ -199,6 +204,18 @@ const App = (): JSX.Element => {
           {"Generate JSON schema for the following selection."}
         </DialogTitle>
         <DialogContent>
+          <FormGroup sx={{ margin: 0, padding: 0 }}>
+            <FormControlLabel
+              control={
+                <Switch
+                  size="small"
+                  value={isGeneratingSwaggerFiles}
+                  onChange={() => setIsGeneratingSwaggerFiles(!isGeneratingSwaggerFiles)}
+                />
+              }
+              label="Generate corresponding Swagger files"
+            />
+          </FormGroup>
           {schemaValues.map(schema => (
             <DialogContentText key={schema}>
               {schema}

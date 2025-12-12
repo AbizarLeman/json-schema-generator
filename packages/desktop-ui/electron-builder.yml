@@ -12,6 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
+  icon: resources/icons/win/icon.ico
   executableName: json-schema-generator-client
   target:
     - nsis
